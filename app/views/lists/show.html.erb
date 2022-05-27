@@ -1,18 +1,25 @@
-<p id="notice"><%= notice %></p>
-
-<h2>
-  <strong>List name:</strong>
-  <%= @list.name %>
-</h2>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
 
-<ul>
-<h4>Bookmarks</h4>
-<% @bookmarks.each do |bk| %>
-  <li><%= bk.movie.title %>: <%= bk.comment %></li>
-<% end %>
-</ul>
+  <div class="header h-200">
+    <h2 class='text-center'>
+      <strong>List name:</strong>
+      <%= @list.name %>
+    </h2>
+  </div>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %> |
-<td><%= link_to 'Add Bookmark', new_list_bookmark_path(@list) %></td>
+
+
+  <ul>
+  <h4>Bookmarks</h4>
+  <% @bookmarks.each do |bk| %>
+    <li><%= bk.movie.title %>: <%= bk.comment %></li>
+  <% end %>
+  </ul>
+
+  <%= link_to 'Edit', edit_list_path(@list) %> |
+  <%= link_to 'Back', lists_path %> |
+  <td><%= link_to 'Add Bookmark', new_list_bookmark_path(@list) %></td>
+
+</div>
