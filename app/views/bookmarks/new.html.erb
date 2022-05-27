@@ -1,5 +1,7 @@
-<h1>New Bookmark</h1>
+<h1> New bookmark of <%= @list.name %></h1>
 
-<%= render 'form', bookmark: @bookmark %>
-
-<%= link_to 'Back', bookmarks_path %>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
+  <%= f.button :submit %>
+<% end %>

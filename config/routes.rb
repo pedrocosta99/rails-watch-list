@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :lists, except: %i[edit update] do
-    resources :bookmarks, only: %i[new create]
+  # get 'bookmarks/create', as: :bookmark_new
+  resources :lists, except: %i[update] do
+    resources :bookmarks, only: %i[new create index]
   end
 
   resources :bookmarks, only: :destroy

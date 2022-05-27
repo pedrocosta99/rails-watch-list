@@ -8,6 +8,7 @@ class ListsController < ApplicationController
 
   # GET /lists/1 or /lists/1.json
   def show
+    @bookmarks = Bookmark.where(list_id: @list)
   end
 
   # GET /lists/new

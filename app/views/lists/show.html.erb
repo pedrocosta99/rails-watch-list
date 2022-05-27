@@ -1,9 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h2>
+  <strong>List name:</strong>
   <%= @list.name %>
-</p>
+</h2>
+
+
+<ul>
+<h4>Bookmarks</h4>
+<% @bookmarks.each do |bk| %>
+  <li><%= bk.movie.title %>: <%= bk.comment %></li>
+<% end %>
+</ul>
 
 <%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<%= link_to 'Back', lists_path %> |
+<td><%= link_to 'Add Bookmark', new_list_bookmark_path(@list) %></td>
